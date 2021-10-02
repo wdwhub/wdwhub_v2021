@@ -1,0 +1,39 @@
+<%= form_with(model: touringplans_cached_venue, local: true) do |form| %>
+  <% if touringplans_cached_venue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(touringplans_cached_venue.errors.count, "error") %> prohibited this touringplans_cached_venue from being saved:</h2>
+
+      <ul>
+      <% touringplans_cached_venue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :permalink, class: 'form-label' %>
+      <%= form.text_field :permalink, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <% if touringplans_cached_venue.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', touringplans_cached_venue, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if touringplans_cached_venue.persisted? %>
+      <%= link_to "Cancel", touringplans_cached_venue, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", touringplans_cached_venues_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

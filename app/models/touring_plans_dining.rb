@@ -1,0 +1,2 @@
+class TouringPlansDining < ApplicationRecord
+end

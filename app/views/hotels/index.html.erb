@@ -1,0 +1,41 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Hotels</h1>
+  </div>
+
+  <div class="col-sm-6 text-end">
+  <%= link_to new_hotel_path, class: 'btn btn-primary' do %>
+    Add New Hotel
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+        <th>Name</th>
+    
+
+            
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @hotels.each do |hotel| %>
+        <%= content_tag :tr, id: dom_id(hotel), class: dom_class(hotel) do %>
+          
+            <td><%= link_to hotel.name, hotel %></td>
+          
+
+          
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

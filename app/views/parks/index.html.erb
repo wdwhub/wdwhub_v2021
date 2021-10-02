@@ -1,0 +1,41 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Parks</h1>
+  </div>
+
+  <div class="col-sm-6 text-end">
+  <%= link_to new_park_path, class: 'btn btn-primary' do %>
+    Add New Park
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+        <th>Name</th>
+    
+
+            
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @parks.each do |park| %>
+        <%= content_tag :tr, id: dom_id(park), class: dom_class(park) do %>
+          
+            <td><%= link_to park.name, park %></td>
+          
+
+          
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,4 +1,6 @@
 class ParksController < ApplicationController
+    
+
   before_action :set_park, only: %i[ show edit update destroy ]
 
   # GET /parks or /parks.json

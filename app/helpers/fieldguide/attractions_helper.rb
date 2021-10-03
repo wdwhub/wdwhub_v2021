@@ -1,0 +1,2 @@
+module Fieldguide::AttractionsHelper
+end

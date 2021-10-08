@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_02_003232) do
+ActiveRecord::Schema.define(version: 2021_10_08_023029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,31 @@ ActiveRecord::Schema.define(version: 2021_10_02_003232) do
 
   create_table "attractions", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cached_touringplans_attractions", force: :cascade do |t|
+    t.string "name"
+    t.string "short_name"
+    t.string "permalink"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cached_touringplans_dining_venues", force: :cascade do |t|
+    t.string "name"
+    t.string "short_name"
+    t.string "permalink"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cached_touringplans_hotels", force: :cascade do |t|
+    t.string "name"
+    t.string "short_name"
+    t.string "permalink"
+    t.string "category_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -111,142 +136,6 @@ ActiveRecord::Schema.define(version: 2021_10_02_003232) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_services_on_user_id"
-  end
-
-  create_table "touring_plans_dinings", force: :cascade do |t|
-    t.text "permalink"
-    t.string "name"
-    t.string "wdw_uri"
-    t.text "address"
-    t.string "city"
-    t.string "state_code"
-    t.string "zip_code"
-    t.string "phone_number"
-    t.string "url"
-    t.boolean "off_site"
-    t.boolean "water_sports"
-    t.boolean "marina"
-    t.boolean "beach"
-    t.boolean "tennis"
-    t.boolean "biking"
-    t.boolean "suites"
-    t.boolean "concierge_floor"
-    t.boolean "room_service"
-    t.boolean "wired_internet"
-    t.boolean "wireless_internet"
-    t.integer "num_rooms"
-    t.string "cost_range"
-    t.string "shuttle_to_parks"
-    t.string "cost_estimate"
-    t.string "lodging_area_code"
-    t.string "category_code"
-    t.string "theme"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "touring_plans_hotels", force: :cascade do |t|
-    t.text "permalink"
-    t.string "name"
-    t.string "wdw_uri"
-    t.text "address"
-    t.string "city"
-    t.string "state_code"
-    t.string "zip_code"
-    t.string "phone_number"
-    t.string "url"
-    t.boolean "off_site"
-    t.boolean "water_sports"
-    t.boolean "marina"
-    t.boolean "beach"
-    t.boolean "tennis"
-    t.boolean "biking"
-    t.boolean "suites"
-    t.boolean "concierge_floor"
-    t.boolean "room_service"
-    t.boolean "wired_internet"
-    t.boolean "wireless_internet"
-    t.integer "num_rooms"
-    t.string "cost_range"
-    t.string "shuttle_to_parks"
-    t.string "cost_estimate"
-    t.string "lodging_area_code"
-    t.string "category_code"
-    t.string "theme"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "touringplans_cached_venues", force: :cascade do |t|
-    t.string "name"
-    t.boolean "fastpass_booth"
-    t.string "short_name"
-    t.boolean "open_emh_morning"
-    t.boolean "open_emh_evening"
-    t.boolean "single_rider"
-    t.string "time_zone"
-    t.boolean "seasonal"
-    t.boolean "open_very_merry"
-    t.boolean "open_not_so_scary"
-    t.string "category_code"
-    t.decimal "duration"
-    t.string "scheduled_code"
-    t.string "what_it_is"
-    t.string "scope_and_scale_code"
-    t.string "when_to_go"
-    t.string "average_wait_per_hundred"
-    t.string "average_wait_assumes"
-    t.string "loading_speed"
-    t.string "probable_wait_time"
-    t.string "special_needs"
-    t.string "height_restriction"
-    t.boolean "intense"
-    t.datetime "extinct_on"
-    t.datetime "opened_on"
-    t.boolean "frightening"
-    t.boolean "physical_considerations"
-    t.boolean "handheld_captioning"
-    t.boolean "video_captioning"
-    t.boolean "reflective_captioning"
-    t.boolean "assistive_listening"
-    t.boolean "audio_description"
-    t.string "wheelchair_transfer_code"
-    t.boolean "no_service_animals"
-    t.boolean "sign_language"
-    t.boolean "service_animal_check"
-    t.boolean "not_to_be_missed"
-    t.boolean "rider_swap"
-    t.string "ultimate_code"
-    t.string "ultimate_task"
-    t.string "park_entrance"
-    t.string "relative_open"
-    t.string "relative_close"
-    t.boolean "close_at_dusk"
-    t.boolean "fastpass_available"
-    t.integer "crowd_calendar_version"
-    t.string "match_name"
-    t.integer "crazy_threshold"
-    t.boolean "fastpass_only"
-    t.boolean "allow_showtimes_after_close"
-    t.boolean "disconnected_fastpass_booth"
-    t.integer "crowd_calendar_group"
-    t.string "arrive_before"
-    t.string "arrive_before_fp"
-    t.boolean "opens_at_sunset"
-    t.boolean "closes_at_sunset"
-    t.string "permalink"
-    t.boolean "allow_time_restriction"
-    t.boolean "relative_open_to_sunset"
-    t.boolean "relative_close_to_sunset"
-    t.integer "closing_round_code"
-    t.integer "walking_time_proxy_id"
-    t.boolean "flexible_duration"
-    t.integer "operator_id"
-    t.string "operator_type"
-    t.integer "showtime_proxy_id"
-    t.boolean "hide_app"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

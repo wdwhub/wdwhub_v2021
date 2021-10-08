@@ -1,2 +1,0 @@
-class TouringPlansDining < ApplicationRecord
-end

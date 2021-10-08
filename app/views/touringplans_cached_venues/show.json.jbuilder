@@ -1,1 +1,0 @@
-json.partial! "touringplans_cached_venues/touringplans_cached_venue", touringplans_cached_venue: @touringplans_cached_venue

@@ -1,2 +1,0 @@
-class TouringplansCachedVenue < ApplicationRecord
-end

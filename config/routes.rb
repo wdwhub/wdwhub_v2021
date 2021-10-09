@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   namespace :backstage do
     resources :parks, only: [:index, :show]
     resources :hotels, only: [:index, :show]
-    resources :attractions, only: [:index, :show]
+    resources :attractions
     resources :dining, only: [:index, :show]
   end
 

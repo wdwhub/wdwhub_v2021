@@ -1,0 +1,29 @@
+<div class="page-header">
+  <%= link_to backstage_attractions_path, class: 'btn btn-default' do %>
+    All Attractions
+  <% end %>
+  <%= link_to edit_backstage_attraction_path(@attraction), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show attraction</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @attraction.name %></dd>
+  <dt>short name:</dt>
+  <dd><%= @attraction.short_name %></dd>
+  <dt>permalink:</dt>
+  <dd><%= @attraction.permalink %></dd>
+  <dt>venue_permalink:</dt>
+  <dd><%= @attraction.venue_permalink %></dd>
+</dl>
+<code>
+name: "Wonderful World of Animation",
+ created_at: Sat, 09 Oct 2021 21:35:46.813499000 UTC +00:00,
+ updated_at: Sat, 09 Oct 2021 21:35:46.815576000 UTC +00:00,
+ permalink: "wonderful-world-animation",
+ short_name: "Wonderful World of Animation",
+ venue_permalink: "hollywood-studios">
+
+</code>

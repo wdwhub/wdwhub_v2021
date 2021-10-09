@@ -1,2 +1,17 @@
-<h1>Fieldguide::Attractions#show</h1>
-<p>Find me in app/views/fieldguide/attractions/show.html.erb</p>
+<div class="page-header">
+  <%= link_to fieldguide_attractions_path, class: 'btn btn-default' do %>
+    All Attractions
+  <% end %>
+  <h1>Show attraction</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @attraction.name %></dd>
+  <dt>short name:</dt>
+  <dd><%= @attraction.short_name %></dd>
+  <dt>permalink:</dt>
+  <dd><%= @attraction.permalink %></dd>
+  <dt>venue_permalink:</dt>
+  <dd><%= @attraction.venue_permalink %></dd>
+</dl>

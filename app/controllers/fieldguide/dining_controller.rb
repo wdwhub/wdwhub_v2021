@@ -1,6 +1,6 @@
 class Fieldguide::DiningController < FieldguideController
   def index
-    @eateries = Eatery.all
+    @dining_venues = DiningVenue.all
   end
 
   def show

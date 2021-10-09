@@ -1,0 +1,49 @@
+<%= form_with(model: [:backstage, @attraction], local: true) do |form| %>
+  <% if attraction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attraction.errors.count, "error") %> prohibited this attraction from being saved:</h2>
+
+      <ul>
+      <% attraction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :short_name, class: 'form-label' %>
+      <%= form.text_field :short_name, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :permalink, class: 'form-label' %>
+      <%= form.text_field :permalink, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :venue_permalink, class: 'form-label' %>
+      <%= form.text_field :venue_permalink, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <% if attraction.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', backstage_attraction_path, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if attraction.persisted? %>
+      <%= link_to "Cancel", backstage_attraction_path(attraction), class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", backstage_attraction_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

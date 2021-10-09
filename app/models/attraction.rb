@@ -1,6 +1,6 @@
 class Attraction < ApplicationRecord
-    def update_from_the_world
+    def self.update_all
         # updates attractions from various sources
-        
+        AdminSync.new.update_attractions
     end
 end

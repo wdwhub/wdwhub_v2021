@@ -4,5 +4,6 @@ class Fieldguide::AttractionsController < FieldguideController
   end
 
   def show
+    @attraction = Attraction.find(params[:id])
   end
 end

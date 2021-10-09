@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_08_234129) do
+ActiveRecord::Schema.define(version: 2021_10_09_153137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_10_08_234129) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "permalink"
     t.string "short_name"
+    t.string "venue_permalink"
   end
 
   create_table "cached_touringplans_attractions", force: :cascade do |t|
@@ -91,6 +92,7 @@ ActiveRecord::Schema.define(version: 2021_10_08_234129) do
     t.string "permalink"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "venue_permalink"
   end
 
   create_table "eateries", force: :cascade do |t|
@@ -116,6 +118,7 @@ ActiveRecord::Schema.define(version: 2021_10_08_234129) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "short_name"
     t.string "permalink"
+    t.string "venue_permalink"
   end
 
   create_table "notifications", force: :cascade do |t|

@@ -11,7 +11,7 @@ class TouringplansSync
         hotels = Touringplans.list(interest, location)
         hotels.each do |hotel|
             cached_hotel = Cached::TouringplansHotel.find_or_create_by(permalink: hotel.permalink)
-            cached_hotel.update!(name: hotel.name, short_name: hotel.sort_name)
+            cached_hotel.update!(name: hotel.name, short_name: hotel.sort_name, venue_permalink: hotel.venue_permalink)
         end
         cached_hotels = Cached::TouringplansHotel.all
     end
@@ -21,7 +21,7 @@ class TouringplansSync
         attractions = Touringplans.list_all("attractions")
         attractions.each do |attraction|
             cached_attraction = Cached::TouringplansAttraction.find_or_create_by(permalink: attraction.permalink)
-            cached_attraction.update!(name: attraction.name, short_name: attraction.short_name)
+            cached_attraction.update!(name: attraction.name, short_name: attraction.short_name, venue_permalink: attraction.venue_permalink)
         end
         Cached::TouringplansAttraction.all
     end
@@ -32,7 +32,7 @@ class TouringplansSync
         venues = Touringplans.list_all(interest)
         venues.each do |venue|
             cached_venue = Cached::TouringplansDiningVenue.find_or_create_by(permalink: venue.permalink)
-            cached_venue.update!(name: venue.name, short_name: venue.short_name)
+            cached_venue.update!(name: venue.name, short_name: venue.short_name, venue_permalink: venue.venue_permalink)
         end
         Cached::TouringplansDiningVenue.all
     end

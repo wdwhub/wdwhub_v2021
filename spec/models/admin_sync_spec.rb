@@ -3,19 +3,40 @@ require 'rails_helper'
 RSpec.describe AdminSync, type: :model do
   sync = AdminSync.new
 
-  it "supports updating the Attraction model" do
-    # ensure that records reside in Cached::TouringplansAttraction
-    tp_sync                 = TouringplansSync.new(interest: "attractions", location: "parks")
-    tp_cached_attractions   = tp_sync.cache_all_attractions
+  context "when updating the Attraction model" do
+      # ensure that records reside in Cached::TouringplansAttraction
+      all_attractions   = sync.update_attractions
 
-    # Cached::TouringplansAttraction.all.length
-      expect(sync.update_attractions.length).to eq(Cached::TouringplansAttraction.all.length)    
+      tp_attraction01   = Cached::TouringplansAttraction.find_by(permalink: "astro-orbiter")
+      attraction01      = Attraction.find_by(permalink: "astro-orbiter")
+
+    it "creates the same number of total Attraction records as Cached::TouringplansAttraction" do
+      expect(all_attractions.length).to eq(Cached::TouringplansAttraction.all.length)    
+    end
+
+    it "updates an  Attraction record with the same name" do
+        expect(attraction01.name).to  eq(tp_attraction01.name)
+        # expect(attraction01.name).to  eq("soemthin")
+    end
+
+    it "updates an  Attraction record with the same name" do
+        expect(attraction01.name).to  eq(tp_attraction01.name)
+        # expect(attraction01.name).to  eq("soemthin")
+    end
+
+    it "updates an  Attraction record with the same short_name" do
+        expect(attraction01.short_name).to  eq(tp_attraction01.short_name)
+        # expect(attraction01.short_name).to  eq("soemthin")
+    end
+
+    it "updates an  Attraction record with the same venue_permalink" do
+        expect(attraction01.venue_permalink).to  eq(tp_attraction01.venue_permalink)
+        # expect(attraction01.venue_permalink).to  eq("soemthin")
+    end
   end
-  
+
   context "when updating the DiningVenue model" do
       # ensure that records reside in Cached::TouringplansAttraction
-      tp_sync                   = TouringplansSync.new(interest: "dining", location: "parks")
-      tp_cached_dining_venues   = tp_sync.cache_all_dining_venues
       all_dining_venues         = sync.update_dining_venues
 
       tp_dining_venue01   = Cached::TouringplansDiningVenue.find_by(permalink: "rosies-all-american-cafe")
@@ -29,8 +50,12 @@ RSpec.describe AdminSync, type: :model do
         expect(dining_venue01.name).to  eq(tp_dining_venue01.name)
     end
 
-    it "updates a DiningVenue record with the same name" do
+    it "updates a DiningVenue record with the same short_name" do
         expect(dining_venue01.short_name).to  eq(tp_dining_venue01.short_name)
+    end
+
+    it "updates a DiningVenue record with the venue_permalink" do
+        expect(dining_venue01.venue_permalink).to  eq(tp_dining_venue01.venue_permalink)
     end
   end
 
@@ -54,5 +79,9 @@ RSpec.describe AdminSync, type: :model do
     it "updates a Hotel record with the same name" do
         expect(tp_hotel01.short_name).to  eq(hotel01.short_name)
     end
+
+    it "updates a Hotel record with the venue_permalink" do
+        expect(hotel01.venue_permalink).to  eq(tp_hotel01.venue_permalink)
+    end    
   end
 end

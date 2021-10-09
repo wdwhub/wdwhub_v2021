@@ -10,6 +10,11 @@ RSpec.describe TouringplansSync, type: :model do
     it "supports the caching of all the entries" do
       expect(sync.cache_all_hotels.length).to eq(46)
     end
+
+    it "caches an entry with a venue_permalink that is longer than 4" do
+      expect(sync.cache_all_dining_venues.first.venue_permalink.to_s.length).to be > 4    
+    end
+
   end
 
   #######
@@ -30,6 +35,10 @@ RSpec.describe TouringplansSync, type: :model do
     
     it "caches an entry with a permalink that is a string" do
       expect(sync.cache_all_attractions.first.permalink.class.to_s).to eq("String")      
+    end
+
+    it "caches an entry with a venue_permalink that is longer than 4" do
+      expect(sync.cache_all_dining_venues.first.venue_permalink.to_s.length).to be > 4    
     end
     
   end
@@ -52,6 +61,10 @@ RSpec.describe TouringplansSync, type: :model do
     
     it "caches an entry with a permalink that is a string" do
       expect(sync.cache_all_dining_venues.first.permalink.class.to_s).to eq("String")      
+    end
+    
+    it "caches an entry with a venue_permalink that is longer than 4" do
+      expect(sync.cache_all_dining_venues.first.venue_permalink.to_s.length).to be > 4    
     end
     
   end  

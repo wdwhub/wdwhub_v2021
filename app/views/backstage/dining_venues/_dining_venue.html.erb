@@ -1,11 +1,9 @@
 <div class="card" style="width: 18rem;">
     <img    src="https://images.unsplash.com/photo-1611745179863-e123a89795fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80" 
-            class="card-img-top" alt="image for <%= attraction.name %>">
+            class="card-img-top" alt="image for <%= dining_venue.name %>">
     <div class="card-body">
-        <h5 class="card-title"><%= attraction.name %> </h5>
+        <h5 class="card-title"><%= dining_venue.name %> </h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        <%= link_to  "Details", fieldguide_attraction_path(attraction), class:"btn btn-primary" %>
-
+        <%= link_to  "Details", backstage_dining_venue_path(dining_venue), class:"btn btn-primary" %>
     </div>
 </div>    

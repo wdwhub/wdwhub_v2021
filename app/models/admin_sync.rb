@@ -2,6 +2,7 @@ class AdminSync
     # updates attractions, hotels, and dining venues
 
     def update_attractions
+        # updates attractions from various sources
         attractions = Cached::TouringplansAttraction.all
         attractions.each do |attraction|
             attraction = Attraction.find_or_create_by(permalink: attraction.permalink)

@@ -1,0 +1,20 @@
+<div class="page-header">
+  <%= link_to backstage_dining_venues_path, class: 'btn btn-default' do %>
+    All Dining Venues
+  <% end %>
+  <%= link_to edit_backstage_dining_venue_path(@dining_venue), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show dining_venue</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @dining_venue.name %></dd>
+  <dt>short name:</dt>
+  <dd><%= @dining_venue.short_name %></dd>
+  <dt>permalink:</dt>
+  <dd><%= @dining_venue.permalink %></dd>
+  <dt>venue_permalink:</dt>
+  <dd><%= @dining_venue.venue_permalink %></dd>
+</dl>

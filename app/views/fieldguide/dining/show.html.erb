@@ -1,2 +1,29 @@
-<h1>Fieldguide::Dining#show</h1>
-<p>Find me in app/views/fieldguide/dining/show.html.erb</p>
+<div class="card" style="width: 18rem;">
+    <img    src="https://images.unsplash.com/photo-1611745179863-e123a89795fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80" 
+            class="card-img-top" alt="image for <%= @dining_venue.name %>">
+    <div class="card-body">
+        <h5 class="card-title"><%= @dining_venue.name %> </h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <%= link_to  "Details", fieldguide_dining_path(@dining_venue), class:"btn btn-primary" %>
+    </div>
+</div>    
+<%#  %>
+<div class="page-header">
+  <%= link_to fieldguide_dining_path, class: 'btn btn-default' do %>
+    All dining_venues
+  <% end %>
+  <h1>Show dining_venue</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @dining_venue.name %></dd>
+  <dt>short name:</dt>
+  <dd><%= @dining_venue.short_name %></dd>
+  <dt>permalink:</dt>
+  <dd><%= @dining_venue.permalink %></dd>
+  <dt>venue_permalink:</dt>
+  <dd><%= @dining_venue.venue_permalink %></dd>
+</dl>
+<P> &nbsp;</P>
+<P> &nbsp;</P>

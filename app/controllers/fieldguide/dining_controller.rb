@@ -4,5 +4,6 @@ class Fieldguide::DiningController < FieldguideController
   end
 
   def show
+    @dining_venue = DiningVenue.find(params[:id])
   end
 end

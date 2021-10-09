@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_08_023029) do
+ActiveRecord::Schema.define(version: 2021_10_08_234129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 2021_10_08_023029) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "permalink"
+    t.string "short_name"
   end
 
   create_table "cached_touringplans_attractions", force: :cascade do |t|
@@ -83,6 +85,14 @@ ActiveRecord::Schema.define(version: 2021_10_08_023029) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "dining_venues", force: :cascade do |t|
+    t.string "name"
+    t.string "short_name"
+    t.string "permalink"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "eateries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -104,6 +114,8 @@ ActiveRecord::Schema.define(version: 2021_10_08_023029) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "short_name"
+    t.string "permalink"
   end
 
   create_table "notifications", force: :cascade do |t|

@@ -4,5 +4,6 @@ class Fieldguide::HotelsController < FieldguideController
   end
 
   def show
+    @hotel = Hotel.find(params[:id])
   end
 end

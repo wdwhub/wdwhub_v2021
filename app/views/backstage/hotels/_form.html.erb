@@ -1,0 +1,49 @@
+<%= form_with(model: [:backstage, @hotel], local: true) do |form| %>
+  <% if hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+
+      <ul>
+      <% hotel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :short_name, class: 'form-label' %>
+      <%= form.text_field :short_name, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :permalink, class: 'form-label' %>
+      <%= form.text_field :permalink, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :venue_permalink, class: 'form-label' %>
+      <%= form.text_field :venue_permalink, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <% if hotel.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', backstage_hotel_path, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if hotel.persisted? %>
+      <%= link_to "Cancel", backstage_hotel_path(hotel), class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", backstage_hotel_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

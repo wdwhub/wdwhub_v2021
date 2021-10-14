@@ -1,0 +1,2 @@
+module Backstage::HotelsHelper
+end

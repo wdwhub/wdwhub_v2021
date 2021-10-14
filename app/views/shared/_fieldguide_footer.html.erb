@@ -1,0 +1,66 @@
+<footer >
+  <nav class="nav">
+  <% if current_page?('/fieldguide') %>
+    <div class="nav_button--active">
+      <i class="material-icons nav__icon">dashboard</i>
+      <span class="nav__text">Field Guide</span>
+    </div>
+  <% else %>
+    <a href="/fieldguide" class="nav__link">
+      <i class="material-icons nav__icon">dashboard</i>
+      <span class="nav__text">Field Guide</span>
+    </a>    
+  <% end %>
+<%#  %>
+  <% if current_page?('/fieldguide/attractions') %>
+    <div class="nav_button--active">
+      <i class="material-icons nav__icon">person</i>
+      <span class="nav__text">Attractions</span>
+    </div>
+  <% else %>
+    <a href="/fieldguide/attractions" class="nav__link">
+      <i class="material-icons nav__icon">person</i>
+      <span class="nav__text">Attractions</span>
+    </a>    
+  <% end %>
+<%#  %>
+  <% if current_page?('/fieldguide/dining') %>
+    <div class="nav_button--active">
+      <i class="material-icons nav__icon">devices</i>
+      <span class="nav__text">Dining</span>
+    </div>
+  <% else %>
+    <a href="/fieldguide/dining" class="nav__link">
+      <i class="material-icons nav__icon">devices</i>
+      <span class="nav__text">Dining</span>
+    </a>
+  <% end %>
+<%#  %>
+  <% if current_page?('/fieldguide/parks') %>
+    <div class="nav_button--active">
+      <i class="material-icons nav__icon">lock</i>
+      <span class="nav__text">Parks</span>
+    </div>
+  <% else %>
+    <a href="/fieldguide/parks" class="nav__link">
+      <i class="material-icons nav__icon">devices</i>
+      <span class="nav__text">Parks</span>
+    </a>
+  <% end %>
+<%#  %>
+  <% if current_page?('/fieldguide/hotels') %>
+    <div class="nav_button--active">
+      <i class="material-icons nav__icon">lock</i>
+      <span class="nav__text">Hotels</span>
+    </div>
+  <% else %>
+    <a href="/fieldguide/hotels" class="nav__link">
+      <i class="material-icons nav__icon">devices</i>
+      <span class="nav__text">Hotels</span>
+    </a>
+  <% end %>
+
+  </nav>
+</footer>
+
+

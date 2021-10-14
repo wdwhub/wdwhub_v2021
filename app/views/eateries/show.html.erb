@@ -1,0 +1,14 @@
+<div class="page-header">
+  <%= link_to eateries_path, class: 'btn btn-default' do %>
+    All Eateries
+  <% end %>
+  <%= link_to edit_eatery_path(@eatery), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show eatery</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @eatery.name %></dd>
+</dl>

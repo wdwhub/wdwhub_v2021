@@ -31,6 +31,17 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  ## custom for gem
+  gem "awesome_print", "~> 1.9", ">= 1.9.2"
+  gem "pry", "~> 0.14.1"
+  gem "rake", "~> 13.0"
+  gem "rubocop", "~> 1.7", require: false
+  
+    ## custom for app
+  gem 'rspec-rails', '~> 5.0', '>= 5.0.2'
+  gem 'factory_bot_rails', '~> 6.2'
+
+
 end
 
 group :development do
@@ -72,3 +83,12 @@ gem 'sidekiq', '~> 6.2'
 gem 'sitemap_generator', '~> 6.1'
 gem 'whenever', require: false
 gem 'responders', github: 'heartcombo/responders'
+
+## custom to app
+gem 'touringplans', '~> 0.2.9'
+
+## custom for gem
+# connect to the API
+gem "httparty", "~> 0.19.0"
+# convert httparty hash to objects
+gem 'dry-struct', '~> 1.4'

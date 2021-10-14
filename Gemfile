@@ -85,7 +85,7 @@ gem 'whenever', require: false
 gem 'responders', github: 'heartcombo/responders'
 
 ## custom to app
-gem 'touringplans', '~> 0.2.7'
+gem 'touringplans', '~> 0.2.9'
 
 ## custom for gem
 # connect to the API

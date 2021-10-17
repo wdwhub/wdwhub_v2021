@@ -6,6 +6,15 @@ GIT
       actionpack (>= 5.2)
       railties (>= 5.2)
 
+GIT
+  remote: https://github.com/wdwhub/touringplans
+  revision: a4bdbe058cf8717a84e952b649384910cd8da65a
+  branch: develop
+  specs:
+    touringplans (0.3.4)
+      dry-struct (~> 1.4)
+      httparty (~> 0.19.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -377,9 +386,6 @@ GEM
       rails (>= 6.0.0)
     thor (1.1.0)
     tilt (2.0.10)
-    touringplans (0.2.9)
-      dry-struct (~> 1.4)
-      httparty (~> 0.19.0)
     turbo-rails (0.8.1)
       rails (>= 6.0.0)
     turbolinks (5.2.1)
@@ -458,7 +464,7 @@ DEPENDENCIES
   sidekiq (~> 6.2)
   sitemap_generator (~> 6.1)
   spring
-  touringplans (~> 0.2.9)
+  touringplans!
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

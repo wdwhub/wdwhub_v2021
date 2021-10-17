@@ -1,0 +1,52 @@
+class AddManyAttrsToCachedTouringplansDiningVenues < ActiveRecord::Migration[6.1]
+  def change
+    add_column :cached_touringplans_dining_venues, :land_id, :integer
+    add_column :cached_touringplans_dining_venues, :category_code, :string
+    add_column :cached_touringplans_dining_venues, :portion_size, :string
+    add_column :cached_touringplans_dining_venues, :cost_code, :string
+    add_column :cached_touringplans_dining_venues, :cuisine, :string
+    add_column :cached_touringplans_dining_venues, :phone_number, :string
+    add_column :cached_touringplans_dining_venues, :entree_range, :string
+    add_column :cached_touringplans_dining_venues, :when_to_go, :string
+    add_column :cached_touringplans_dining_venues, :parking, :string
+    add_column :cached_touringplans_dining_venues, :bar, :string
+    add_column :cached_touringplans_dining_venues, :wine_list, :string
+    add_column :cached_touringplans_dining_venues, :dress, :string
+    add_column :cached_touringplans_dining_venues, :awards, :string
+    add_column :cached_touringplans_dining_venues, :lunch_hours, :string
+    add_column :cached_touringplans_dining_venues, :dinner_hours, :string
+    add_column :cached_touringplans_dining_venues, :selection, :string
+    add_column :cached_touringplans_dining_venues, :setting_atmosphere, :string
+    add_column :cached_touringplans_dining_venues, :other_recommendations, :string
+    add_column :cached_touringplans_dining_venues, :summary, :string
+    add_column :cached_touringplans_dining_venues, :house_specialties, :string
+    add_column :cached_touringplans_dining_venues, :counter_quality_rating, :string
+    add_column :cached_touringplans_dining_venues, :counter_value_rating, :string
+    add_column :cached_touringplans_dining_venues, :table_quality_rating, :string
+    add_column :cached_touringplans_dining_venues, :table_value_rating, :string
+    add_column :cached_touringplans_dining_venues, :overall_rating, :string
+    add_column :cached_touringplans_dining_venues, :service_rating, :string
+    add_column :cached_touringplans_dining_venues, :friendliness_rating, :string
+    add_column :cached_touringplans_dining_venues, :adult_breakfast_menu_url, :string
+    add_column :cached_touringplans_dining_venues, :adult_lunch_menu_url, :string
+    add_column :cached_touringplans_dining_venues, :adult_dinner_menu_url, :string
+    add_column :cached_touringplans_dining_venues, :child_breakfast_menu_url, :string
+    add_column :cached_touringplans_dining_venues, :child_lunch_menu_url, :string
+    add_column :cached_touringplans_dining_venues, :child_dinner_menu_url, :string
+    add_column :cached_touringplans_dining_venues, :requires_credit_card, :boolean
+    add_column :cached_touringplans_dining_venues, :requires_pre_payment, :boolean
+    add_column :cached_touringplans_dining_venues, :plan_x_coord, :integer
+    add_column :cached_touringplans_dining_venues, :plan_y_coord, :integer
+    add_column :cached_touringplans_dining_venues, :old_park_id, :integer
+    add_column :cached_touringplans_dining_venues, :old_attraction_id, :integer
+    add_column :cached_touringplans_dining_venues, :plan_name, :string
+    add_column :cached_touringplans_dining_venues, :extinct_on, :datetime
+    add_column :cached_touringplans_dining_venues, :opened_on, :datetime
+    add_column :cached_touringplans_dining_venues, :disney_permalink, :string
+    add_column :cached_touringplans_dining_venues, :code, :string
+    add_column :cached_touringplans_dining_venues, :accepts_reservations, :boolean
+    add_column :cached_touringplans_dining_venues, :kosher_available, :boolean
+    add_column :cached_touringplans_dining_venues, :dinable_id, :integer
+    add_column :cached_touringplans_dining_venues, :dinable_type, :string
+  end
+end
